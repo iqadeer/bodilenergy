@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  graphapi:
+    image: iqadeer/bodilenergy:bodilgraphapi-1.0
+    build:
+      context: ./graphapi
+      dockerfile: ../.docker/api.prod.Dockerfile
+    environment:
+      NODE_ENV: production
+      SERVER_PORT: 5601
+    ports:
+      - 5601:5601
+  bodilclient:
+    image: iqadeer/bodilenergy:bodilclient-1.0
+    build:
+      context: ./graph-client
+      dockerfile: ../.docker/client.prod.Dockerfile
+    environment:
+      NODE_ENV: production
+      SERVER_PORT: 5601
+    ports:
+      - 3000:80

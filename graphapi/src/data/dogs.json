@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Hound afghan 1", "imageFileName": "hound-afghan-1.jpg" },
+  { "id": 2, "name": "Hound afghan 2", "imageFileName": "hound-afghan-2.jpg" },
+  { "id": 3, "name": "Hound afghan 3", "imageFileName": "hound-afghan-3.jpg" },
+  { "id": 4, "name": "Hound basset 1", "imageFileName": "hound-basset-1.jpg" },
+  { "id": 5, "name": "Hound basset 2", "imageFileName": "hound-basset-2.jpg" },
+  { "id": 6, "name": "Hound basset 3", "imageFileName": "hound-basset-3.jpg" },
+  { "id": 7, "name": "Hound basset 4", "imageFileName": "hound-basset-4.jpg" },
+  { "id": 8, "name": "Hound blood 1", "imageFileName": "hound-blood-1.jpg" },
+  { "id": 9, "name": "Hound blood 2", "imageFileName": "hound-blood-2.jpg" },
+  { "id": 10, "name": "Hound blood 3", "imageFileName": "hound-blood-3.jpg" }
+]
