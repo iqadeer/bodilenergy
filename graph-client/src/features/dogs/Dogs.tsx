@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import useDogQueryService from './useDogQueryService';
 import { Image } from 'mui-image';
 import { useParams, useSearchParams } from 'react-router-dom';
+import { graphAPIBaseUrl } from '../common/graphqlClient';
 
 const Dogs = () => {
   const [dogId, setDogId] = useState<number>(1);
-  const { isLoading, data } = useDogQueryService(dogId);
+  const { isLoading, data, isFetching } = useDogQueryService(dogId);
 
   const handleNewFactClick = () => {
     setDogId(dogId === 10 ? 1 : dogId + 1);
@@ -29,7 +30,7 @@ const Dogs = () => {
   }, [idFromParams, idFromQueryParams]);
 
   const { dog: { name = '', id = null, imageFileName = '' } = {} } = { ...data };
-  const imageSrc = `http://localhost:5601/images/${imageFileName}`;
+  const imageSrc = `${graphAPIBaseUrl}/images/${imageFileName}`;
   return (
     <>
       <Container sx={{ mt: 3 }}>
@@ -48,7 +49,7 @@ const Dogs = () => {
               <span style={{ fontSize: 24, marginRight: 10 }}>Id: </span>
               {id}
             </Typography>
-            <Button variant='outlined' sx={{ mt: 5 }} onClick={handleNewFactClick}>
+            <Button variant='outlined' sx={{ mt: 5 }} onClick={handleNewFactClick} disabled={isFetching}>
               Next
             </Button>
           </Grid>

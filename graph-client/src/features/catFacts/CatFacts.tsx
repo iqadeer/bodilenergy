@@ -3,7 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import useCatFactQueryService from './useCatFactQueryService';
 
 const CatFacts = () => {
-  const { isLoading, data } = useCatFactQueryService();
+  const { isLoading, data, isFetching } = useCatFactQueryService();
   const client = useQueryClient();
   const handleNewFactClick = () => {
     client.invalidateQueries({ queryKey: ['getNewCatFact'] });
@@ -24,7 +24,7 @@ const CatFacts = () => {
           <span style={{ fontSize: 24, marginRight: 10 }}>Length: </span>
           {length ?? ''}
         </Typography>
-        <Button variant='outlined' sx={{ mt: 5 }} onClick={handleNewFactClick}>
+        <Button variant='outlined' sx={{ mt: 5 }} onClick={handleNewFactClick} disabled={isFetching}>
           New fact
         </Button>
       </Container>
