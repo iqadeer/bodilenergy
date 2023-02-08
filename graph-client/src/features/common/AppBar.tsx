@@ -13,12 +13,15 @@ const ButtonAppBar = () => {
   const handleCatFactsClick = () => {
     navigate('catfacts');
   };
+  const handleHeaderClick = () => {
+    navigate('/');
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <Toolbar>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }} onClick={handleHeaderClick}>
             Bodil energy
           </Typography>
           <Button color='inherit' onClick={handleDogsClick}>
