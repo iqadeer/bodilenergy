@@ -30,7 +30,7 @@ const startSever = async () => {
   await server.start();
   app.use(
     '/graphql',
-    cors<cors.CorsRequest>(),
+    cors<cors.CorsRequest>({ origin: ['https://bodil.childhug.co.uk', 'http://localhost:3000'] }),
     express.json(),
     expressMiddleware(server, {
       context: async ({ req }) => {
